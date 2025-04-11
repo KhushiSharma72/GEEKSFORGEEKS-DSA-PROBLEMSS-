@@ -1,0 +1,13 @@
+class Solution {
+  public:
+    int maxSubarraySum(vector<int> &arr) {
+        int current=arr[0];
+        int global=arr[0];
+        
+        for(int i=1;i<arr.size();i++){
+            current=max(arr[i],current+arr[i]);
+            global=max(global,current);
+        }
+        return global;
+    }
+};
